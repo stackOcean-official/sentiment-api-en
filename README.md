@@ -30,12 +30,18 @@ Install packages:
 pip install -r requirements.txt
 ```
 
+Download the model:
+
+```
+python -m app.save_model
+```
+
 ---
 
 ## Run the server
 
 ```bash
-API_KEY=CHANGE_ME && uvicorn app.main:app --reload
+API_KEY=CHANGE_ME uvicorn app.main:app --reload
 ```
 
 The server is running on [http://localhost:8000](http://127.0.0.1:8000/).You can change the `API_KEY` if you like. Swagger documentation can be accessed at [http://localhost:8000/docs](http://127.0.0.1:8000/docs).
