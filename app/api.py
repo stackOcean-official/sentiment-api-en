@@ -9,7 +9,7 @@ class Input(BaseModel):
     text: str
 
 class Output(BaseModel):
-    score: float
+    text: str
 
 api_key_header_auth = APIKeyHeader(name="X-API-Key", auto_error=True)
 
