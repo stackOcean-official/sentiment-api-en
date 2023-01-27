@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  sentiment-api-de:
+  sentiment-api-en:
     restart: unless-stopped
     build: .
     environment:

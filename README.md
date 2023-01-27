@@ -1,6 +1,6 @@
-# sentiment-api-de
+# sentiment-api-en
 
-Rest-API for german sentiment analysis of an input text. 
+Rest-API for englisch sentiment analysis of an input text. 
 
 ## How to setup
 
@@ -57,13 +57,13 @@ curl -X POST -H 'Content-type: application/json' -H 'X-API-Key: CHANGE_ME' --dat
 ## How to build & run the Docker Image
 
 ```bash
-docker build -t sentiment-api-de .
+docker build -t sentiment-api-en .
 ```
 
 Run the Docker Image with:
 
 ```bash
-docker run -d --rm -p 8000:80 --env API_KEY=CHANGE_ME --name sentiment-api-de sentiment-api-de
+docker run -d --rm -p 8000:80 --env API_KEY=CHANGE_ME --name sentiment-api-en sentiment-api-en
 ```
 
 You can now access the api at [http://localhost:8000](http://127.0.0.1:8000/). Swagger documentation are available at [http://localhost:8000/docs](http://127.0.0.1:8000/docs).
@@ -73,13 +73,13 @@ You can now access the api at [http://localhost:8000](http://127.0.0.1:8000/). S
 To view the logs of the container run:
 
 ```bash
-docker logs sentiment-api-de
+docker logs sentiment-api-en
 ```
 
 To stop the container run:
 
 ```bash
-docker stop sentiment-api-de
+docker stop sentiment-api-en
 ```
 
 ---
