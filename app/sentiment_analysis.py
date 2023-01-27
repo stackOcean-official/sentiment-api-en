@@ -1,15 +1,16 @@
-import os
-import re
+import torch
+from transformers import pipeline
 
 from app.api import Input, Output
-from transformers import pipeline
-import torch
 
-def predict_sentiment_request(input: Input) -> Output:
+
+def get_generator():
     # load model
     model = torch.load("model/bert.pt")
     tokenizer = torch.load("model/bert-tokenizer.pt")
-    generator = pipeline('sentiment-analysis', model=model,tokenizer=tokenizer)
+    return pipeline('sentiment-analysis', model=model,tokenizer=tokenizer)
 
+
+def predict_sentiment_request(input: Input, generator) -> Output:
     output = generator(input.text)
     return Output(sentiment =  output[0]["label"])

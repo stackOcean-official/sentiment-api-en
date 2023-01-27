@@ -2,7 +2,7 @@ from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import Input, Output, get_api_key
-from app.sentiment_analysis import predict_sentiment_request
+from app.sentiment_analysis import get_generator, predict_sentiment_request
 
 app = FastAPI(dependencies=[Depends(get_api_key)])
 
@@ -14,6 +14,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+generator = get_generator() # load model
+
 @app.post("/")
 async def detect_language(input: Input) -> Output:
-    return predict_sentiment_request(input)
+    return predict_sentiment_request(input, generator)
